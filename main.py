@@ -8,10 +8,13 @@ import os
 
 STORY = "He counted stars. One counted back."
 
+# The harness reads exactly this path; the gate allows 1-60 characters.
+OUTPUT_PATH = "/output/entry.txt"
+
 
 def main():
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8", newline="\n") as handle:
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    with open(OUTPUT_PATH, "w", encoding="utf-8", newline="\n") as handle:
         handle.write(STORY + "\n")
 
 
